@@ -126,5 +126,11 @@ def page_not_found(e):
 def server_error(e):
     return render_template('500.html'), 500
 
+# if __name__ == '__main__':
+#     app.run(debug=True)
+
+
+
 if __name__ == '__main__':
-    app.run(debug=True)
+    port = int(os.environ.get("PORT", 5000))  # Get port from environment (Render sets this)
+    app.run(host="0.0.0.0", port=port, debug=True)  # Bind to 0.0.0.0
